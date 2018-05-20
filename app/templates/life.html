@@ -1,0 +1,313 @@
+{% extends "base.html" %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% block main %}
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+</style>
+</head>
+<body>
+
+<h2>How much life insurance should you buy?</h2>
+<p>See recommended coverage levels for people like you</p>
+<div class="container">
+  <form action="/action_page.php">
+    <div class="row">
+        <div class="col-25">
+        <label for="life insurance type">Life insurance type</label>
+     </div>
+     <div class="col-75">
+        <select id="life insurance type" name="Life insurance type">
+          <option value="Short term">Short term</option>
+          <option value="Long term">Long term</option>
+          <option value="Life">Life</option>
+        </select>
+    </div>
+      <div class="col-25">
+        <label for="parish">Parish</label>
+     </div>
+      <div class="col-75">
+        <select id="parish" name="Parish">
+          <option value="kingston">Kingston</option>
+          <option value="st. andrew">St. Andrew</option>
+          <option value="portland">Portland</option>
+          <option value="st. thomas">St. Thomas</option>
+          <option value="st. catherine">St. Catherine</option>
+          <option value="st. mary">St. Mary</option>
+          <option value="st. ann">St. Ann</option>
+          <option value="manchester">Manchester</option>
+          <option value="clarendon">Clarendon</option>
+          <option value="hanover">Hanover</option>
+          <option value="westmoreland">Westmoreland</option>
+          <option value="st. james">St. James</option>
+          <option value="trelawney">Trelawney</option>
+          <option value="st. elizbeth">St. Elizabeth</option>
+        </select>
+      </div>
+     <div class="col-25">
+        <label for="date of birth">Date of birth</label>
+     </div>
+        <div class="col-75">
+         <input type="date" name="date of birth">
+      </div>
+     <div class="col-25">
+        <label for="health status">Health status</label>
+     </div>
+        <div class="col-75">
+        <select id="health status" name="health status">
+          <option value="low birth weight">Low birth weight</option>
+          <option value="arthritis">Arthritis</option>
+          <option value="diabetes">Diabetes</option>
+          <option value="asthma">Asthma</option>
+          <option value="high blood pressure">High blood pressure</option>
+          <option value="cancer indicence">Cancer incidence</option>
+          <option value="chronic pain">Chronic pain</option>
+          <option value="oral health">Oral health</option>
+          <option value="depression">Depression</option>
+          <option value="hospital visits due to injury">Hospital visits due to injury</option>
+          <option value="reports of waterborne diseases or foodborne illness">Reports of waterborne diseases or foodborne illness</option>
+          <option value="healthy">Healthy</option>
+        </select>
+    </div>
+    <div class="col-25">
+        <label for="have you ever had">Have you ever had:</label>
+     </div>
+        <div class="col-75">
+        <label for="Meningitis">Meningitis</label>
+        <input type="checkbox" name="illness" value="Meningitis">YES
+        <input type="checkbox" name="illness" value="Meningitis">NO<br>
+        <label for="scarlet fever">Scarlet fever</label>
+        <input type="checkbox" name="illness" value="scarlet fever">YES
+        <input type="checkbox" name="illness" value="scarlet fever">NO<br>
+        <label for="Infectious Mononucleosis">Infectious Mononucleosis</label>
+        <input type="checkbox" name="illness" value="Infectious Mononucleosis">YES
+        <input type="checkbox" name="illness" value="Infectious Mononucleosis">NO<br>
+        <label for="Tuberculosis">Tuberculosis</label>
+        <input type="checkbox" name="illness" value="Tuberculosis">YES
+        <input type="checkbox" name="illness" value="Tuberculosis">NO<br>
+        <label for="Exposure to TB ">Exposure to TB </label>
+        <input type="checkbox" name="illness" value="Exposure to TB">YES
+        <input type="checkbox" name="illness" value="Exposure to TB">NO<br>
+        <label for="Malaria">Malaria</label>
+        <input type="checkbox" name="illness" value="Malaria">YES
+        <input type="checkbox" name="illness" value="Malaria">NO<br>
+        <label for="Bronchitis">Bronchitis</label>
+        <input type="checkbox" name="illness" value="Bronchitis">YES
+        <input type="checkbox" name="illness" value="Bronchitis">NO<br>
+        <label for="Pneumonia">Pneumonia</label>
+        <input type="checkbox" name="illness" value="Pneumonia">YES
+        <input type="checkbox" name="illness" value="Pneumonia">NO<br>
+        <label for="Pleurisy">Pleurisy</label>
+        <input type="checkbox" name="illness" value="Pleurisy">YES
+        <input type="checkbox" name="illness" value="Pleurisy">NO<br>
+        <label for="Hepatitis (yellow jaundice)">Hepatitis (yellow jaundice)</label>
+        <input type="checkbox" name="illness" value="Hepatitis (yellow jaundice)">YES
+        <input type="checkbox" name="illness" value="Hepatitis (yellow jaundice)">NO<br>
+        <label for="Bladder infections">Bladder infections</label>
+        <input type="checkbox" name="illness" value="Bladder infections">YES
+        <input type="checkbox" name="illness" value="Bladder infections">NO<br>
+        <label for="Rheumatic fever">Rheumatic fever</label>
+        <input type="checkbox" name="illness" value="Rheumatic fever">YES
+        <input type="checkbox" name="illness" value="Rheumatic fever">NO<br>
+        <label for="Kidney disease">Kidney disease</label>
+        <input type="checkbox" name="illness" value="Kidney disease">YES
+        <input type="checkbox" name="illness" value="Kidney disease">NO<br>
+        <label for="Hives">Hives</label>
+        <input type="checkbox" name="illness" value="Hives">YES
+        <input type="checkbox" name="illness" value="Hives">NO<br>
+        <label for="Hay fever/sinusitis">Hay fever/sinusitis</label>
+        <input type="checkbox" name="illness" value="Hay fever/sinusitis">YES
+        <input type="checkbox" name="illness" value="Hay fever/sinusitis">NO<br>
+        <label for="Asthma">Asthma</label>
+        <input type="checkbox" name="illness" value="Asthma">YES
+        <input type="checkbox" name="illness" value="Asthma">NO<br>
+        <label for="Emphysema">Emphysema</label>
+        <input type="checkbox" name="illness" value="Emphysema">YES
+        <input type="checkbox" name="illness" value="Emphysema">NO<br>
+        <label for="Arthritis">Arthritis</label>
+        <input type="checkbox" name="illness" value="Arthritis">YES
+        <input type="checkbox" name="illness" value="Arthritis">NO<br>
+        <label for="Back trouble">Back trouble</label>
+        <input type="checkbox" name="illness" value="Back trouble">YES
+        <input type="checkbox" name="illness" value="Back trouble">NO<br>
+        <label for="High blood pressure">High blood pressure</label>
+        <input type="checkbox" name="illness" value="High blood pressure">YES
+        <input type="checkbox" name="illness" value="High blood pressure">NO<br>
+        <label for="Heart disease">Heart disease</label>
+        <input type="checkbox" name="illness" value="Heart disease">YES
+        <input type="checkbox" name="illness" value="Heart disease">NO<br>
+        <label for="Anemia">Anemia</label>
+        <input type="checkbox" name="illness" value="Anemia">YES
+        <input type="checkbox" name="illness" value="Anemia">NO<br>
+        <label for="Bleeding tendency">Bleeding tendency</label>
+        <input type="checkbox" name="illness" value="Bleeding tendency">YES
+        <input type="checkbox" name="illness" value="Bleeding tendency">NO<br>
+        <label for="Nose bleeds">Nose bleeds</label>
+        <input type="checkbox" name="illness" value="Nose bleeds">YES
+        <input type="checkbox" name="illness" value="Nose bleeds">NO<br>
+        <label for="Ulcer">Ulcer</label>
+        <input type="checkbox" name="illness" value="Ulcer">YES
+        <input type="checkbox" name="illness" value="Ulcer">NO<br>
+        <label for="Hemorrhoids">Hemorrhoids</label>
+        <input type="checkbox" name="illness" value="Hemorrhoids">YES
+        <input type="checkbox" name="illness" value="Hemorrhoids">NO<br>
+        <label for="Blood transfusion">Blood transfusion</label>
+        <input type="checkbox" name="illness" value="Blood transfusion">YES
+        <input type="checkbox" name="illness" value="Blood transfusion">NO<br>
+        <label for="Diabetes">Diabetes</label>
+        <input type="checkbox" name="illness" value="Diabetes">YES
+        <input type="checkbox" name="illness" value="Diabetes">NO<br>
+        
+        
+       
+    </div>
+     <div class="col-25">
+        <label for="family history">FAMILY HISTORY</label>
+     </div>
+        <div class="col-25">
+            <label for="family history">Has any blood relative had any of the following:</label>
+         </div>
+     <div class="col-75">
+        <label for="Anemia">Anemia</label>
+        <input type="checkbox" name="illness" value="Anemia">YES
+        <input type="checkbox" name="illness" value="Anemia">NO<br>
+        <label for="Leukemia">Leukemia</label>
+        <input type="checkbox" name="illness" value="Leukemia">YES
+        <input type="checkbox" name="illness" value="Leukemia">NO<br>
+        <label for="Repeated infections">Repeated infections</label>
+        <input type="checkbox" name="illness" value="Repeated infections">YES
+        <input type="checkbox" name="illness" value="Repeated infections">NO<br>
+        <label for="Crippling arthritis">Crippling arthritis</label>
+        <input type="checkbox" name="illness" value="Crippling arthritis">YES
+        <input type="checkbox" name="illness" value="Crippling arthritis">NO<br>
+        <label for="Chronic lung disease ">Chronic lung disease</label>
+        <input type="checkbox" name="illness" value="Chronic lung disease">YES
+        <input type="checkbox" name="illness" value="Chronic lung disease">NO<br>
+        <label for="High blood pressure">High blood pressure</label>
+        <input type="checkbox" name="illness" value="High blood pressure">YES
+        <input type="checkbox" name="illness" value="High blood pressure">NO<br>
+        <label for="Kidney disease">Kidney disease</label>
+        <input type="checkbox" name="illness" value="Kidney disease">YES
+        <input type="checkbox" name="illness" value="Kidney disease">NO<br>
+        <label for="Asthma">Asthma</label>
+        <input type="checkbox" name="illness" value="Asthma">YES
+        <input type="checkbox" name="illness" value="Asthma">NO<br>
+        <label for="Severe allergies">Severe allergies</label>
+        <input type="checkbox" name="illness" value="Severe allergies">YES
+        <input type="checkbox" name="illness" value="Severe allergies">NO<br>
+        <label for="Mental illness">Mental illness</label>
+        <input type="checkbox" name="illness" value="Mental illness">YES
+        <input type="checkbox" name="illness" value="Mental illness">NO<br>
+        <label for="Convultions or seizures">Convultions or seizures</label>
+        <input type="checkbox" name="illness" value="Convultions or seizures">YES
+        <input type="checkbox" name="illness" value="Convultions or seizures">NO<br>
+        <label for="Migrane headaches">Migrane headaches</label>
+        <input type="checkbox" name="illness" value="Migrane headaches">YES
+        <input type="checkbox" name="illness" value="Migrane headaches">NO<br>
+        <label for="Diabetes">Diabetes</label>
+        <input type="checkbox" name="illness" value="Diabetes">YES
+        <input type="checkbox" name="illness" value="Diabetes">NO<br>
+        <label for="Gout">Gout</label>
+        <input type="checkbox" name="illness" value="Gout">YES
+        <input type="checkbox" name="illness" value="Gout">NO<br>
+        <label for="Obesity">Obesity</label>
+        <input type="checkbox" name="illness" value="Obesity">YES
+        <input type="checkbox" name="illness" value="Obesity">NO<br>
+        <label for="Thyroid trouble">Thyroid trouble</label>
+        <input type="checkbox" name="illness" value="Thyroid trouble">YES
+        <input type="checkbox" name="illness" value="Thyroid trouble">NO<br>
+        <label for="Peptic ulcer">Peptic ulcer</label>
+        <input type="checkbox" name="illness" value="Peptic ulcer">YES
+        <input type="checkbox" name="illness" value="Peptic ulcer">NO<br>
+        <label for="Chronic diarrhea">Chronic diarrhea</label>
+        <input type="checkbox" name="illness" value="Chronic diarrhea">YES
+        <input type="checkbox" name="illness" value="Chronic diarrhea">NO<br>
+        <label for="Cancer">Cancer</label>
+        <input type="checkbox" name="illness" value="Cancer">YES
+        <input type="checkbox" name="illness" value="Cancer">NO<br>
+        <label for="Suicide">Suicide</label>
+        <input type="checkbox" name="illness" value="Suicide">YES
+        <input type="checkbox" name="illness" value="Suicide">NO<br>
+        <label for="Gallbladder Disease">Gallbladder Disease</label>
+        <input type="checkbox" name="illness" value="Gallbladder Disease">YES
+        <input type="checkbox" name="illness" value="Gallbladder Disease">NO<br>
+        <label for="Alcoholism">Alcoholism</label>
+        <input type="checkbox" name="illness" value="Alcoholism">YES
+        <input type="checkbox" name="illness" value="Alcoholism">NO<br>
+  
+      <label for="family history">If yes, what relationship:</label>
+   
+    <input type="text" name="If yes, what relationship:">
+ <div class = "col-25">
+      <label for="occupation">Occupation</label>
+      <input type="text" name="occupation">
+   </div>
+    <div class="row">
+      <input type="submit" value="Generate Quote">
+    </div>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% block main %}
+<style>
+* {
+    box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+</style>
+
+
+<h2>How much car insurance should you buy?</h2>
+<p>See recommended coverage levels for drivers like you</p>
+<div class="container">
+  <form action="/action_page.php">
+    <div class="row">
+      <div class="col-25">
+        <label for="vmodelyr">Vehicle Model Year</label>
+      </div>
+      <div class="col-75">
+        <select id="vmodelyr" name="Vehicle Model Year">
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
+          <option value="2016">2016</option>
+          <option value="2015">2015</option>
+          <option value="2014">2014</option>
+          <option value="2013">2013</option>
+          <option value="2012">2012</option>
+          <option value="2011">2011</option>
+          <option value="2010">2010</option>
+          <option value="2009">2009</option>
+          <option value="2008">2008</option>
+          <option value="2007">2007</option>
+          <option value="2006">2006</option>
+          <option value="2005">2005</option>
+          <option value="2004">2004</option>
+          <option value="2003">2003</option>
+          <option value="2002">2002</option>
+          <option value="2001">2001</option>
+          <option value="2000">2000</option>
+          <option value="1999">1999</option>
+          <option value="1998">1998</option>
+          <option value="1997">1997</option>
+          <option value="1996">1996</option>
+          <option value="1995">1995</option>
+          <option value="1994">1994</option>
+          <option value="1993">1993</option>/
+          <option value="1992">1992</option>
+          <option value="1991">1991</option>
+          <option value="1990">1990</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="parish">Parish</label>
+      </div>
+      <div class="col-75">
+        <select id="parish" name="Parish">
+          <option value="kingston">Kingston</option>
+          <option value="st. andrew">St. Andrew</option>
+          <option value="portland">Portland</option>
+          <option value="st. thomas">St. Thomas</option>
+          <option value="st. catherine">St. Catherine</option>
+          <option value="st. mary">St. Mary</option>
+          <option value="st. ann">St. Ann</option>
+          <option value="manchester">Manchester</option>
+          <option value="clarendon">Clarendon</option>
+          <option value="hanover">Hanover</option>
+          <option value="westmoreland">Westmoreland</option>
+          <option value="st. james">St. James</option>
+          <option value="trelawny">Trelawny</option>
+          <option value="st. elizbeth">St. Elizabeth</option>
+        </select>
+      </div>
+     <div class="col-25">
+        <label for="age">Age</label>
+     </div>
+        <div class="col-75">
+        <select id="age" name="age">
+          <option value="16-24">18 to 24</option>
+          <option value="25-34">25 to 34</option>
+          <option value="35-44">35-44</option>
+          <option value="45-54">45-54</option>
+          <option value="55-64">55-64</option>
+          <option value="65 +">65 +</option>
+        </select>
+      </div>
+     <div class="col-25">
+        <label for="own your home?">Own your home?</label>
+     </div>
+        <div class="col-75">
+        <select id="own your home?" name="own your home?">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+    </div>
+    <div class="col-25">
+        <label for="own your car?">Own your car?</label>
+     </div>
+        <div class="col-75">
+        <select id="own your car?" name="own your car?">
+          <option value="owned">Owned</option>
+          <option value="financed">Financed</option>
+          <option value="leased">Leased</option>
+        </select>
+    </div>
+    <div class="row">
+      <input type="submit" value="Generate Quote">
+    </div>
+  </form>
+</div>
+
+{% endblock %}
