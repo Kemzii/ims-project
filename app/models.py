@@ -1,11 +1,19 @@
 from . import db
+from werkzeug.security import generate_password_hash
 
-
-class UserProfile(db.Model):
+class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(80))
-    last_name = db.Column(db.String(80))
+    firstname = db.Column(db.String(80))
+    lastname = db.Column(db.String(80))
     username = db.Column(db.String(80), unique=True)
+    password = db.Column(db.String(255))
+    email = db.Column(db.String(80))
+    trn = db.Column(db.String(80))
+    gender= db.Column(db.String(80))
+    
+    def __init__(self, password, **kwargs):
+        super(Users, self).__init__(**kwargs)
+        self.password = generate_password_hash(password, method='pbkdf2:sha256')
 
     def is_authenticated(self):
         return True

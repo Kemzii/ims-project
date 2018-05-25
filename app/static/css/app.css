@@ -1,3 +1,31 @@
 body {
     padding-top: 5rem;
 }
+
+.banner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 26%;
+    height: auto;
+}
+
+.items {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-width: 3px;
+    border-color: transparent;
+    float: left;
+    
+}
+.inbl {
+    display: block;
+    width: 350px;
+    height: 200px;
+    margin: 10px;
+    float: right;
+}
+
+
