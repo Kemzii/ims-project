@@ -1,7 +1,7 @@
-Flask
-Jinja2==2.9.4
+Flask==0.12.2
+Jinja2==2.10
+Werkzeug==0.14
 MarkupSafe==0.23
-Werkzeug==0.11.15
 click==6.7
 gunicorn==19.6.0
 itsdangerous==0.24
